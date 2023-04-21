@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BuscarProductosComponent } from './buscar-productos/buscar-productos.component';
 import { ContactarComponent } from './contactar/contactar.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { ContactarCustomFormComponent } from './contactar-custom-form/contactar-custom-form.component';
 
 const appRoutes: Routes = [
@@ -25,6 +25,9 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    HttpClientXsrfModule.withOptions({
+      headerName: 'X-CSRFToken'
+      }),
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],
