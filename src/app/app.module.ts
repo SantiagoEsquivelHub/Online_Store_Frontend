@@ -1,30 +1,33 @@
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BuscarProductosComponent } from './buscar-productos/buscar-productos.component';
-import { RouterModule, Routes } from '@angular/router';
 import { ContactarComponent } from './contactar/contactar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ContactarCustomFormComponent } from './contactar-custom-form/contactar-custom-form.component';
 
-const appRoutes:Routes =
-[
-  {path: 'buscar_productos', component:BuscarProductosComponent},
-  {path: 'contactar', component:ContactarComponent}
+const appRoutes: Routes = [
+  { path: 'buscar_productos', component: BuscarProductosComponent },
+  { path: 'contactar', component: ContactarComponent },
+  { path: 'contactar_custom_form', component: ContactarCustomFormComponent },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     BuscarProductosComponent,
-    ContactarComponent
+    ContactarComponent,
+    ContactarCustomFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

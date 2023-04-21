@@ -26,8 +26,8 @@ body
   
 .title 
 {
-    font-size: 50px;
-    margin-bottom: 50px;
+    font-size: 20px;
+    margin: 5% 1%
 }
 
 .inputContainer 
@@ -57,7 +57,6 @@ body
 .submitBtn
 {
     display: block;
-    margin-left: auto;
     padding: 15px 30px;
     border: none;
     background-color: purple;
